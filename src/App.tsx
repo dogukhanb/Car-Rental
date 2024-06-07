@@ -1,16 +1,15 @@
-import { useState } from "react";
-import Title from "./components/Title";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import MainPage from "./pages/MainPage";
 
 const App = () => {
-  const [state, setState] = useState<number>(1);
-
   return (
-    <div className="">
-      <h1>Merhaba</h1>
-      <p>{state}</p>
-      <button onClick={() => setState(state + 1)}>Artı</button>
-      <Title text="ss" />
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
